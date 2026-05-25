@@ -2,6 +2,7 @@ import { fastify } from 'fastify';
 import 'dotenv/config';
 
 const {PORT} = process.env;
+console.log(`Variaveis de ambiente carregadas: ${PORT}`)
 
 const server = fastify();
 
