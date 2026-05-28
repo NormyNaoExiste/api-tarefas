@@ -3,13 +3,28 @@ import { sql } from "./db.js";
 
 export class DatabaseMYSQL{
 
+    async list(search){
+        let tarefas;
+
+        if (search){
+            [tarefas] = await sql.execute(
+                'SELECT * FROM tarefas WHERE titulo LIKE ?',
+                [`%${search}%`] 
+            );
+        } else{
+            [tarefas] = await sql.execute('SELECT * FROM tarefas');
+        }
+
+        return tarefas;
+    }
+
     async create(tarefa){
         const tarefaId = randomUUID();
-        const { title, description, status } = tarefa;
+        const { titulo, descricao, status } = tarefa;
 
         await sql.execute(
             'INSERT INTO tarefas (id, titulo, descricao, status) VALUES (?, ?, ?, ?)',
-            [tarefaId, title, description, status ?? false]
+            [tarefaId, titulo, descricao, status ?? false]
         );
     }
 
