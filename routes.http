@@ -1,0 +1,23 @@
+POST http://localhost:3333/tarefas
+    Content-Type: application/json
+
+{
+    "titulo": "zerar pokemon com ratata shine",
+    "descricao": "Muito dificil",
+    "status": "pendente"
+}
+
+GET http://localhost:3333/tarefas
+     GET http://localhost:3333/tarefas
+
+
+PUT http://localhost:3333/tarefas/id-da-tarefa-a-ser-atualizado
+    Content-Type: application/json
+
+{
+     "titulo": "zerar pokemon com ratata shine com iv perfeito",
+    "descricao": "Muito dificil mesmo",
+    "status": "em andamento"
+}
+
+    DELETE http://localhost:3333/tarefas/id-da-tarefa-a-ser-deletada
