@@ -1,8 +1,8 @@
 import { fastify } from 'fastify';
 import 'dotenv/config';
-import { DatabaseMySQL } from './database_mysql.js'
+import { DatabaseMYSQL } from './database_mysql.js'
 
-const database = new DatabaseMySQL();
+const database = new DatabaseMYSQL();
 
 const {PORT} = process.env;
 console.log(`Variaveis de ambiente carregadas: ${PORT}`)
